@@ -1,18 +1,11 @@
-import CampoInput from "./components/CampoInput/CampoInput"
-import Formulario from "./components/Formulario/Formulario"
+import Layout from "./components/layout/layout";
 
 function App() {
   
   return (
-    <>
-      <Formulario titulo='Create your free Account'>
-          <CampoInput/>
-          <CampoInput/>
-          <CampoInput/>
-      </Formulario>
-    </>
+    <Layout></Layout>
   )
 }
 
-export default App
+export default App;
 
