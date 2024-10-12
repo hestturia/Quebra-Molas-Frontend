@@ -6,12 +6,12 @@ const Titulo = styled.h1`
     margin-bottom: 50px;
 `
 const FormularioContainer = styled.form`
-    width: 50%;
+    width: 65%;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    margin: auto 0;
 `
 
 const Formulario = ({titulo, children, textoBotao}) => {

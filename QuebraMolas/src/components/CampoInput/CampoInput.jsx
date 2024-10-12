@@ -21,10 +21,10 @@ const Input = styled.input`
     border-radius: 20px;
 `
 
-const CampoInput = ({texto, type, placeholder}) => {
+const CampoInput = ({label, type, placeholder}) => {
     return(
         <Container>
-            <Label>{texto}</Label>
+            <Label>{label}</Label>
             <Input type={type} placeholder={placeholder}/>
         </Container>
     )
