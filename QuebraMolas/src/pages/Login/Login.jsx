@@ -3,14 +3,14 @@ import Layout from '../../components/layout/layout';
 import Formulario from '../../components/Formulario/Formulario';
 import CampoInput from '../../components/CampoInput/CampoInput';
 
-const ContainerMain = styled.main`
+const ContainerLogin = styled.main`
     display: flex;
     justify-content: space-between;
 `
 
 const Login = () => {
     return(
-        <ContainerMain>
+        <ContainerLogin>
             <Layout/>
 
             <Formulario titulo='Entre na sua conta' textoBotao='Entre'>
@@ -18,7 +18,7 @@ const Login = () => {
                 <CampoInput label='Email' />
                 <CampoInput label='Senha'/>
             </Formulario>
-        </ContainerMain>
+        </ContainerLogin>
     )
 }
 
