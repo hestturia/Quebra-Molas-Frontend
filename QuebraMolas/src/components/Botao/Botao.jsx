@@ -16,7 +16,7 @@ const BotaoStyle = styled.button`
 
 const Botao = ({texto}) => {
     return(
-        <BotaoStyle>
+        <BotaoStyle type='submit'>
             {texto}
         </BotaoStyle>
     )
