@@ -1,8 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, Legend, ResponsiveContainer } from 'recharts';
+import styled from 'styled-components';
 
 const ITEMS_PER_PAGE = 15; 
+
+const PaginationButton = styled.button`
+  background-color: #FAED32;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  
+  &:hover {
+    background-color: #FFC501;
+  }
+
+  &:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+`;
 
 const TrafficDataByMunicipio = ({ municipio }) => {
   const [accidents, setAccidents] = useState([]);
@@ -32,7 +59,6 @@ const TrafficDataByMunicipio = ({ municipio }) => {
   if (loading) return <p>Carregando dados...</p>;
   if (error) return <p>{error}</p>;
 
-
   const aggregatedData = accidents.reduce((acc, accident) => {
     const date = accident.data;
     if (!acc[date]) {
@@ -44,9 +70,8 @@ const TrafficDataByMunicipio = ({ municipio }) => {
     return acc;
   }, {});
 
-  const finalData = Object.values(aggregatedData); 
+  const finalData = Object.values(aggregatedData);
 
-  
   const indexOfLastAccident = currentPage * ITEMS_PER_PAGE;
   const indexOfFirstAccident = indexOfLastAccident - ITEMS_PER_PAGE;
   const currentAccidents = finalData.slice(indexOfFirstAccident, indexOfLastAccident);
@@ -63,19 +88,23 @@ const TrafficDataByMunicipio = ({ municipio }) => {
           <Tooltip />
           <Legend />
           <Bar dataKey="feridos" fill="#8884d8" />
-          <Bar dataKey="mortos" fill="#82ca9d" />
-          <Bar dataKey="veiculos" fill="#ffc658" />
+          <Bar dataKey="mortos" fill="#ffc658" />
+          <Bar dataKey="veiculos" fill="#82ca9d" />
         </BarChart>
       </ResponsiveContainer>
 
-      <div>
+      <ButtonContainer>
         {currentPage > 1 && (
-          <button onClick={() => setCurrentPage(currentPage - 1)}>Anterior</button>
+          <PaginationButton onClick={() => setCurrentPage(currentPage - 1)}>
+            Anterior
+          </PaginationButton>
         )}
         {currentPage < totalPages && (
-          <button onClick={() => setCurrentPage(currentPage + 1)}>Próximo</button>
+          <PaginationButton onClick={() => setCurrentPage(currentPage + 1)}>
+            Próximo
+          </PaginationButton>
         )}
-      </div>
+      </ButtonContainer>
     </div>
   );
 };
