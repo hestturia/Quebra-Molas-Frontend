@@ -49,7 +49,6 @@ function Filter() {
       <SafetyQuote>No trânsito, a segurança vem em primeiro</SafetyQuote>
     </FilterContainer>
     <AccidentSearch />
-    <Footer />
     </>
   );
 }

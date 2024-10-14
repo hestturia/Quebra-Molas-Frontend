@@ -59,13 +59,13 @@ function Home() {
       <CardsContainer>
         <Card
           title='Você sabia?'
-          content='Curiosidade sobre acidentes no trânsito'
+          content='Devido ao grande fluxo de veículos e pedestres, as cidades registram um número maior de colisões e atropelamentos. Ficar atento em cruzamentos e respeitar limites de velocidade são essenciais para a segurança urbana.'
         />
         <Card
           title='Você sabia?'
-          content='Curiosidade sobre acidentes no trânsito'
+          content='Estudos mostram que a maioria dos acidentes ocorre devido a falhas humanas, como desatenção e excesso de velocidade. Pequenas mudanças no comportamento ao volante fazem uma grande diferença'
         />
-        <Card title='Histórico' content='' />
+        <Card title='Histórico' content='Em 2024, a segurança no trânsito ganhou ainda mais destaque em relação a 2023, com avanços tecnológicos e novas políticas de mobilidade urbana. A implementação de sensores de tráfego, câmeras inteligentes e sistemas de aviso para motoristas cresceu em grandes cidades ao redor do mundo, reduzindo o número de acidentes em áreas críticas.' />
       </CardsContainer>
       <Footer />
     </HomeContainer>

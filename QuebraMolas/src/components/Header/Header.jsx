@@ -119,7 +119,6 @@ const Header = ({ loginPage }) => {
             <ul>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/filter">Filtrar</Link></li>
-              <li><Link to="/about">Sobre nós</Link></li>
             </ul>
           </Nav>
           <ProfileSection>
