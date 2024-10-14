@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import bannerImage from '../../assets/banner.jpg';
-import Card from '../../components/Card/Card.jsx';
 import Header from '../../components/Header/Header.jsx';
+import AccidentSearch from '../../components/TrafficData/Search.jsx';
 import Footer from '../../components/Footer/Footer.jsx';
 
-const HomeContainer = styled.div`
+const FilterContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,15 +31,6 @@ const BannerImage = styled.img`
   }
 `;
 
-const CardsContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
-  padding: 20px;
-`;
-
 const SafetyQuote = styled.p`
   font-size: 2rem;
   text-align: center;
@@ -47,30 +38,20 @@ const SafetyQuote = styled.p`
   color: #333;
 `;
 
-function Home() {
+function Filter() {
   return (
     <>
     <Header />
-    <HomeContainer>
+    <FilterContainer>
       <BannerContainer>
         <BannerImage src={bannerImage} alt='Banner' />
       </BannerContainer>
       <SafetyQuote>No trânsito, a segurança vem em primeiro</SafetyQuote>
-      <CardsContainer>
-        <Card
-          title='Você sabia?'
-          content='Curiosidade sobre acidentes no trânsito'
-        />
-        <Card
-          title='Você sabia?'
-          content='Curiosidade sobre acidentes no trânsito'
-        />
-        <Card title='Histórico' content='' />
-      </CardsContainer>
-      <Footer />
-    </HomeContainer>
+    </FilterContainer>
+    <AccidentSearch />
+    <Footer />
     </>
   );
 }
 
-export default Home;
+export default Filter;
